@@ -18,3 +18,24 @@ spec:
       workspaces:
         - name: output
           workspace: source-repo
+
+    - name: maven-build
+      params:
+        - name: image-name
+          value: example-deploy
+        - name: image-tag
+          value: $(tasks.git-clone-task.results.commit)
+
+      runAfter:
+        - git-clone-task
+
+      taskRef:
+        kind: Task
+        name: maven-build
+
+      workspace:
+        - name: source
+          workspace: source-repo
+
+  workspaces:
+    - name: source-repo
