@@ -1,0 +1,27 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: maven-build-task
+spec:
+  params:
+    - name: mavenGoal
+      type: string
+      description: "The Maven goal to run (e.g., clean package)"
+      default: "clean package"
+    - name: workspacePath
+      type: string
+      description: "The path in the workspace where the source code is located"
+      default: "/workspace/source"
+  workspaces:
+    - name: source
+      description: "Workspace containing the source code"
+  steps:
+    - name: maven-build
+      image: maven:3.8.5-openjdk-11
+      script: |
+        #!/bin/sh
+        cd $(params.workspacePath)
+        mvn $(params.mavenGoal)
+  results:
+    - name: build-result
+      description: "The result of the Maven build"
