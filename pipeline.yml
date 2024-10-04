@@ -33,7 +33,7 @@ spec:
         kind: Task
         name: maven-build
 
-      workspace:
+      workspaces:
         - name: source
           workspace: source-repo
 
