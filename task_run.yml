@@ -1,0 +1,13 @@
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  generateName: git-clone-task-run-
+spec:
+  taskRef:
+    name: git-clone-task
+  params:
+    - name: repo-url
+      value: https://github.com/redhat-appdev-practice/tekton-lab.git
+  workspaces:
+    - name: output
+      emptyDir: {}
