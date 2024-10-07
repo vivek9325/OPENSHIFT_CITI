@@ -11,3 +11,12 @@
    21  kubectl get virtualservice
    22  kubectl get svc istio-ingressgateway -n istio-system
    23  history
+
+28  kubectl edit svc istio-ingressgateway -n istio-system
+   29  kubectl get svc istio-ingressgateway -n istio-system
+   30  minikube ip
+   31  curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+   32  sudo install minikube-linux-amd64 /usr/local/bin/minikube
+   33  minikube ip
+   34  minikube start
+   35  history
