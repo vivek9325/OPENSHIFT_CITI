@@ -1,0 +1,12 @@
+ 9  oc get projects
+   10  oc project vivek11arora-dev
+   11  oc get pods
+   12  oc describe pod workspace1f2252f2a5da426a-7bf9db4769-pfn85
+   13  oc logs workspace1f2252f2a5da426a-7bf9db4769-pfn85
+   14  oc logs workspace1f2252f2a5da426a-7bf9db4769-pfn85 -c web-terminal-tooling
+   15  oc get deployments
+   16  oc describe deployment vivek-deployment
+   17  oc get services
+   18  oc scale --replicas=3 deployment/vivek-deployment
+   19  oc get routes
+   20  history
