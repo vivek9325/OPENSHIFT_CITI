@@ -20,3 +20,9 @@
    33  minikube ip
    34  minikube start
    35  history
+
+16  kubectl get svc istio-ingressgateway -n istio-system
+   17  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.13/samples/bookinfo/networking/virtual-service-all-v1.yaml
+   18  kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.13/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
+   19  history
+controlplane $ 
